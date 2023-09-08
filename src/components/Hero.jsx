@@ -2,12 +2,7 @@ import React from "react";
 import hero from "../assets/images/home.png";
 import { TypeAnimation } from "react-type-animation";
 const Hero = () => {
-  const social_media = [
-    "logo-instagram",
-    "logo-facebook",
-    "logo-linkedin",
-    "logo-twitter",
-  ];
+  const social_media = ["logo-linkedin", "logo-twitter", "logo-github"];
   return (
     <section
       id="home"

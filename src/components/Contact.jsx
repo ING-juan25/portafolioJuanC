@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useRef } from "react";
+import emailjs from "@emailjs/browser";
 
 const Contact = () => {
   const contact_info = [
@@ -9,6 +10,28 @@ const Contact = () => {
       text: "localization",
     },
   ];
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_2ug7wzd",
+        "template_epvlyjo",
+        form.current,
+        "tgg9SRoWO7bXcuG5n"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+          form.current.reset();
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+  };
   return (
     <section id="contact" className="py-10 px-3 text-white">
       <div className="text-center mt-8">
@@ -20,12 +43,25 @@ const Contact = () => {
           className="mt-16 flex md:flex-row flex-col
          gap-6 max-w-5xl bg-gray-800 md:p-6 p-2 rounded-lg mx-auto"
         >
-          <form className="flex flex-col flex-1 gap-5">
-            <input type="text" placeholder="Your Name" />
-            <input type="Email" placeholder="Your Email Address" />
-            <textarea placeholder="Your Message" rows={10}></textarea>
+          <form
+            className="flex flex-col flex-1 gap-5"
+            ref={form}
+            onSubmit={sendEmail}
+          >
+            <input type="text" placeholder="Your Name" name="user_name" />
+            <input
+              type="Email"
+              placeholder="Your Email Address"
+              name="user_email"
+            />
+            <textarea
+              placeholder="Your Message"
+              name="message"
+              rows={10}
+            ></textarea>
             <button className="btn-primary w-fit">Send Message</button>
           </form>
+
           <div className="flex flex-col  gap-7 ">
             {contact_info.map((contact, i) => (
               <div

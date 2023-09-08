@@ -3,6 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import project1 from "../assets/images/project-1.png";
 import project2 from "../assets/images/project-2.png";
 import project3 from "../assets/images/project-3.png";
+import project4 from "../assets/images/project-4.png";
 import project_person from "../assets/images/hero.png";
 import "swiper/css";
 import "swiper/css/pagination";
@@ -12,21 +13,27 @@ const Project = () => {
   const projects = [
     {
       img: project1,
-      name: "Movie App",
-      github_link: "https://github.com/Sridhar-C-25",
-      live_link: "https://myreactflix.netlify.app",
+      name: "Rick and Morty",
+      github_link: "https://github.com/ING-juan25/RickAndMorty",
+      live_link: "https://rick-and-morty99.netlify.app",
     },
     {
       img: project2,
-      name: "Job search Web App",
-      github_link: "https://github.com/Sridhar-C-25/jobsearchapp",
-      live_link: "https://myjobsearch.netlify.app",
+      name: "Fortune cookies",
+      github_link: "https://github.com/ING-juan25/fortunerCookies",
+      live_link: "https://galletafortune.netlify.app",
     },
     {
       img: project3,
-      name: "Highking",
-      github_link: "https://github.com/Sridhar-C-25/highking",
-      live_link: "https://highking01.netlify.app",
+      name: "Animes",
+      github_link: "https://github.com/ING-juan25/Animes",
+      live_link: "https://papaya-trifle-65bed4.netlify.app",
+    },
+    {
+      img: project4,
+      name: "POKEDEX",
+      github_link: "https://github.com/ING-juan25/pokemon-wiki",
+      live_link: "https://pokemon-wiki-jsj-v2.netlify.app/",
     },
   ];
   return (
